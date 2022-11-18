@@ -3,4 +3,4 @@
 lerna run build
 lb
 git commit -am "build"
-lerna publish prepatch
+lerna publish prepatch -y
