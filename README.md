@@ -4,4 +4,4 @@
 
 > Runs everything needed to publish
 
-
+[Script](./lerna-all.sh)
