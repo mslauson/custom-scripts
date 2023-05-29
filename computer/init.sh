@@ -3,6 +3,7 @@
 mkdir ~/installs
 mkdir -p ~/projects/{api,config,libs,ui}
 
-sudo pacman -S i3 picom polybar kitty neovim neofetch ranger rofi fortune-mod
+yay -S cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
+  lolcat zsh kitty neovim neofetch ranger rofi wofi fortune-mod
 
-yay -S cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet lolcat
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
