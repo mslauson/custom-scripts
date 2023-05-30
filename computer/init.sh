@@ -9,6 +9,8 @@ yay -S cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh_plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh_plugins/zsh-autosuggestions
 
 git clone https://gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-config
