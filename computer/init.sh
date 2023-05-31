@@ -6,7 +6,11 @@ mkdir -p ~/projects/{api,config,libs,ui}
 
 yay -S cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
   lolcat zsh kitty neovim neofetch ranger rofi wofi fortune-mod \
-  ripgrep autojump
+  ripgrep autojump looking-glass hyprland waybar-hyprland cava \
+  waybar-mpris-git python rustup kitty fish wofi \
+  xdg-desktop-portal-hyprland-git tty-clock-git swaylockd grim slurp \
+  pokemon-colorscripts-git starship jq dunst wl-clipboard swaylock-effects-git \
+  swww-git
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
