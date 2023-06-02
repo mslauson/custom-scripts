@@ -10,7 +10,7 @@ yay -S cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
   waybar-mpris-git python rustup kitty fish wofi \
   xdg-desktop-portal-hyprland-git tty-clock-git swaylockd grim slurp \
   pokemon-colorscripts-git starship jq dunst wl-clipboard swaylock-effects-git \
-  swww-git
+  swww-git nerd-fonts-git golang
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
