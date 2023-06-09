@@ -12,7 +12,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-yay -S cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
+yay -S --needed --noconfirm cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
   lolcat zsh kitty neovim neofetch ranger rofi wofi fortune-mod \
   ripgrep autojump hyprland waybar-hyprland-git  \
   waybar-mpris-git python rustup kitty fish wofi \
