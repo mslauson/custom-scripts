@@ -1,16 +1,7 @@
 #!/bin/bash
 
-echo "installing base packages..."
-mkdir ~/installs
-mkdir ~/.zsh_plugins
-mkdir -p ~/projects/{api,config,libs,ui}
-
-echo "Would you like to init nfs mounts (fstab)
-"
-##
-10.7.5.60:/mnt/general/personal/media     /mnt/media     nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
-10.7.5.60:/mnt/general/backup /mnt/backup        nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
-sudo pacman -Syyu
+echo "updating with pacman..."
+sudo pacman -Syyu --noconfirm
 
 echo "installing yay..."
 pacman -S --needed git base-devel
@@ -19,9 +10,34 @@ cd yay
 makepkg -si
 
 echo "updating with yay..."
+yay -Syyu --noconfirm
+
+mkdir ~/installs
+mkdir ~/.zsh_plugins
+mkdir -p ~/projects/{api,config,libs,ui}
+
+# Mounts
+read -p "Do you want to create mount points and update fstab? (yes/no) " yn
+
+case $yn in 
+	yes ) 
+	  echo "Creating /mnt directories";
+	      mkdir -p /mnt/{media,backup};
+	  echo "Updating fstab";
+	    sudo echo "10.7.5.60:/mnt/general/personal/media     /mnt/media     nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
+      sudo echo "10.7.5.60:/mnt/general/backup /mnt/backup        nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
+       break;;
+	no ) echo exiting...;
+		break;;
+	* ) echo invalid response;;
+esac
+done
+
+
 
 yay -S nerd-fonts-jetbrains-mono-160
 
+echo "installing base packages..."
 yay -S --needed --noconfirm cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
   lolcat zsh kitty neovim neofetch ranger rofi wofi fortune-mod \
   ripgrep autojump hyprland waybar-hyprland-git  \
@@ -29,7 +45,8 @@ yay -S --needed --noconfirm cava autotiling lazygit insomia ttf-jetbrains-mono-n
   xdg-desktop-portal-hyprland-git tty-clock-git swaylockd grim slurp \
   pokemon-colorscripts-git starship jq dunst wl-clipboard swaylock-effects-git \
   swww-git  golang aur-talk-git aurpublish yup aurvote-utils \
-  package-query
+  package-query util-say-git ponysay cowsay wthrr wlogout pipewire bluez \
+  wireguard-tools wifi4wofi
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
@@ -43,4 +60,8 @@ git clone https://gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-c
 
 git clone https://gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
 ~/projects/config/term-config/init.sh
+
+git clone https://gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
+~/projects/config/astro-config/init.sh
+
 
