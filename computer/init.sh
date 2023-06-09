@@ -4,7 +4,7 @@ echo "updating with pacman..."
 sudo pacman -Syyu --noconfirm
 
 echo "installing yay..."
-pacman -S --needed git base-devel
+sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
