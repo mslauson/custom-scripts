@@ -46,11 +46,11 @@ yay -S --needed --noconfirm cava autotiling lazygit insomia ttf-jetbrains-mono-n
   pokemon-colorscripts-git starship jq dunst wl-clipboard swaylock-effects-git \
   swww-git  golang aur-talk-git aurpublish yup aurvote-utils \
   package-query util-say-git ponysay cowsay cowthink wthrr wlogout pipewire bluez \
-  wireguard-tools wifi4wofi lightdm
+  wireguard-tools wifi4wofi gdm
 
 
 echo "Enabling LightDM as Login Manager..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-sudo systemctl enable lightdm
+sudo systemctl enable gdm
 
 echo "Installing nvm..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
