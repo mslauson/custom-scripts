@@ -4,13 +4,21 @@ mkdir ~/installs
 mkdir ~/.zsh_plugins
 mkdir -p ~/projects/{api,config,libs,ui}
 
+sudo pacman -Syyu
+
+
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
 yay -S cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
   lolcat zsh kitty neovim neofetch ranger rofi wofi fortune-mod \
   ripgrep autojump hyprland waybar-hyprland-git  \
   waybar-mpris-git python rustup kitty fish wofi \
   xdg-desktop-portal-hyprland-git tty-clock-git swaylockd grim slurp \
   pokemon-colorscripts-git starship jq dunst wl-clipboard swaylock-effects-git \
-  swww-git nerd-fonts-git golang
+  swww-git nerd-fonts-git golang aur-talk-git aurpublish yup
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
