@@ -21,8 +21,6 @@ mkdir ~/.zsh_plugins
 mkdir -p ~/projects/{api,config,libs,ui}
 
 # Mounts
-
-# Mounts
 # read -p "Do you want to create mount points and update fstab? (yes/no) " yn
 #
 # case $yn in 
