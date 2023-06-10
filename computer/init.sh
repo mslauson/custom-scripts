@@ -1,38 +1,43 @@
 #!/bin/bash
-
+#
 echo "updating with pacman..."
 sudo pacman -Syyu --noconfirm
 
-echo "installing yay..."
-pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+#echo "installing yay..."
+#sudo pacman -S --needed git base-devel
+#git clone https://aur.archlinux.org/yay.git
+#cd yay
+#makepkg -si
 
 echo "updating with yay..."
 yay -Syyu --noconfirm
+
+rm -rf ~/installs
+rm -r ~/.zsh_plugins
+rm -r ~/projects
 
 mkdir ~/installs
 mkdir ~/.zsh_plugins
 mkdir -p ~/projects/{api,config,libs,ui}
 
 # Mounts
-read -p "Do you want to create mount points and update fstab? (yes/no) " yn
 
-case $yn in 
-	yes ) 
-	  echo "Creating /mnt directories";
-	      mkdir -p /mnt/{media,backup};
-	  echo "Updating fstab";
-	    sudo echo "10.7.5.60:/mnt/general/personal/media     /mnt/media     nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
-      sudo echo "10.7.5.60:/mnt/general/backup /mnt/backup        nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
-       break;;
-	no ) echo exiting...;
-		break;;
-	* ) echo invalid response;;
-esac
-done
-
+# Mounts
+# read -p "Do you want to create mount points and update fstab? (yes/no) " yn
+#
+# case $yn in 
+# 	yes ) 
+# 	  echo "Creating /mnt directories";
+# 	      mkdir -p /mnt/{media,backup};
+# 	  echo "Updating fstab";
+# 	    sudo echo "10.7.5.60:/mnt/general/personal/media     /mnt/media     nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
+#       sudo echo "10.7.5.60:/mnt/general/backup /mnt/backup        nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
+#        break;;
+# 	no ) echo exiting...;
+# 		break;;
+# 	* ) echo invalid response;;
+# esac
+# done
 
 
 yay -S nerd-fonts-jetbrains-mono-160
