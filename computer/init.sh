@@ -1,12 +1,11 @@
 #!/bin/bash
-#
-echo "installing gaming and media packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-yay -S --needed --noconfirm steam cava musickube
+
+echo "Initializing environment" 
 
 echo "updating with pacman..."
 sudo pacman -Syyu --noconfirm
 
-#echo "installing yay..."
+#echo "Installing yay..."
 #sudo pacman -S --needed git base-devel
 #git clone https://aur.archlinux.org/yay.git
 #cd yay
@@ -16,10 +15,10 @@ echo "updating with yay..."
 yay -Syyu --noconfirm
 
 
+yay -S --needed --noconfirm cowsay cowthink ponysay toilet lolcat nerd-fonts-jetbrains-mono-160
 
-Mounts
-read -p "Do you want to create mount points and update fstab? (yes/no) " yn
-
+#Mounts
+echo "Would you like to mount nfs shares?" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 select yn in "Yes" "No"; do
 case $yn in 
 	yes ) 
@@ -35,10 +34,14 @@ case $yn in
 esac
 done
 
+read -p "Please enter git username: " GIT_USER
+read -p "Please enter git password: " GIT_PASS
 
+git config --global credential.helper cache
 
+echo "Starting SIO Arch Initialization!\rPlease wait a few moments and stay near by \rin case any prompts appear." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 
-echo "installing base packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+echo "Installing base packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm  autotiling toilet \
   lolcat zsh kitty neovim neofetch ranger \
   ripgrep autojump hyprland waybar-hyprland-git  \
@@ -49,13 +52,13 @@ yay -S --needed --noconfirm  autotiling toilet \
   package-query util-say-git  wthrr wlogout pipewire bluez \
   wireguard-tools wifi4wofi
 
-echo "installing languages and devtools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+echo "Installing languages and devtools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia
 
-echo "installing internet and messaging packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+echo "Installing internet and messaging packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm firefox-developer-edition bitwarden discord signal-desktop
 
-echo "installing gaming and media packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+echo "Installing gaming and media packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm steam cava musickube
 
 
@@ -76,45 +79,26 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh_plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh_plugins/zsh-autosuggestions
 
 echo "Ininitalizing configs..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-git clone https://gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-config
+git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-config
 ~/projects/config/wm-config/init.sh
 
-git clone https://gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
+git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
 ~/projects/config/term-config/init.sh
 
-git clone https://gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
+git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
 ~/projects/config/astro-config/init.sh
 
 echo "Initializing notes..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-git clone https://gitea.slauson.io/mslauson/notes.git ~/notes
+git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/notes.git ~/notes
 
-echo "            ##
-                 ####
-                ######
-               ########
-              ##########
-             ############
-            ##############
-           ################
-          ##################
-         ####################
-        ######################
-       #########      #########
-      ##########      ##########
-     ###########      ###########
-    ##########          ##########
-   #######                  #######
-  ####                          ####
- ###                              ###
-"
+echo "  
 
-echo "
-██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗██╗                                                                                         
-██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝██║                                                                                         
-██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  ██║                                                                                         
-██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  ╚═╝                                                                                         
-╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗██╗                                                                                         
- ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝                                                                                         
+              ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗██╗                                                                                         
+              ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝██║                                                                                         
+              ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  ██║                                                                                         
+              ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  ╚═╝                                                                                         
+              ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗██╗                                                                                         
+               ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝                                                                                         
                                                                                                                                                           
 ███████╗███╗   ██╗     ██╗ ██████╗ ██╗   ██╗    ██╗   ██╗███████╗██╗███╗   ██╗ ██████╗      █████╗ ██████╗  ██████╗██╗  ██╗    ██████╗ ████████╗██╗    ██╗
 ██╔════╝████╗  ██║     ██║██╔═══██╗╚██╗ ██╔╝    ██║   ██║██╔════╝██║████╗  ██║██╔════╝     ██╔══██╗██╔══██╗██╔════╝██║  ██║    ██╔══██╗╚══██╔══╝██║    ██║
@@ -122,5 +106,42 @@ echo "
 ██╔══╝  ██║╚██╗██║██   ██║██║   ██║  ╚██╔╝      ██║   ██║╚════██║██║██║╚██╗██║██║   ██║    ██╔══██║██╔══██╗██║     ██╔══██║    ██╔══██╗   ██║   ██║███╗██║
 ███████╗██║ ╚████║╚█████╔╝╚██████╔╝   ██║       ╚██████╔╝███████║██║██║ ╚████║╚██████╔╝    ██║  ██║██║  ██║╚██████╗██║  ██║    ██████╔╝   ██║   ╚███╔███╔╝
 ╚══════╝╚═╝  ╚═══╝ ╚════╝  ╚═════╝    ╚═╝        ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚═════╝    ╚═╝    ╚══╝╚══╝ 
+
+
+                                  ##
+                                 ####
+                                ######
+                               ########
+                              ##########
+                             ############
+                            ##############
+                           ################
+                          ##################
+                         ####################
+                        ######################
+                       #########      #########
+                      ##########      ##########
+                     ###########      ###########
+                    ##########          ##########
+                   #######                  #######
+                  ####                          ####
+                 ###                              ###
+ 
+
+ ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗██████╗     ██████╗ ██╗   ██╗   
+██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗    ██╔══██╗╚██╗ ██╔╝██╗
+██║     ██████╔╝█████╗  ███████║   ██║   █████╗  ██║  ██║    ██████╔╝ ╚████╔╝ ╚═╝
+██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══╝  ██║  ██║    ██╔══██╗  ╚██╔╝  ██╗
+╚██████╗██║  ██║███████╗██║  ██║   ██║   ███████╗██████╔╝    ██████╔╝   ██║   ╚═╝
+ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝     ╚═════╝    ╚═╝      
+                                                                                 
+            ███╗   ███╗███████╗              ███████╗██╗ ██████╗                             
+            ████╗ ████║██╔════╝              ██╔════╝██║██╔═══██╗                            
+            ██╔████╔██║███████╗    █████╗    ███████╗██║██║   ██║                            
+            ██║╚██╔╝██║╚════██║    ╚════╝    ╚════██║██║██║   ██║                            
+            ██║ ╚═╝ ██║███████║              ███████║██║╚██████╔╝                            
+            ╚═╝     ╚═╝╚══════╝              ╚══════╝╚═╝ ╚═════╝                             
+                                                                                 
+
 "
 exit 0;
