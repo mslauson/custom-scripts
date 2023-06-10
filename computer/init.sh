@@ -40,7 +40,8 @@ mkdir -p ~/projects/{api,config,libs,ui}
 # done
 
 
-yay -S nerd-fonts-jetbrains-mono-160
+echo "installing fonts and fun stuff"
+yay -S nerd-fonts-jetbrains-mono-160 ponysay cowsay cowthink
 
 echo "installing base packages..."
 yay -S --needed --noconfirm cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
@@ -50,7 +51,7 @@ yay -S --needed --noconfirm cava autotiling lazygit insomia ttf-jetbrains-mono-n
   xdg-desktop-portal-hyprland-git tty-clock-git swaylockd grim slurp \
   pokemon-colorscripts-git starship jq dunst wl-clipboard swaylock-effects-git \
   swww-git  golang aur-talk-git aurpublish yup aurvote-utils \
-  package-query util-say-git ponysay cowsay cowthink wthrr wlogout pipewire bluez \
+  package-query util-say-git  wthrr wlogout pipewire bluez \
   wireguard-tools wifi4wofi gdm
 
 
@@ -59,6 +60,9 @@ sudo systemctl enable gdm
 
 echo "Installing nvm..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+echo "Installing nvm..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+nvm install 20
 
 echo "Installing zplug..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
