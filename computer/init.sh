@@ -43,14 +43,15 @@ echo "Starting SIO Arch Initialization!\rPlease wait a few moments and stay near
 
 echo "Installing base packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm  autotiling toilet \
-  lolcat zsh kitty neovim neofetch ranger \
-  ripgrep autojump hyprland waybar-hyprland-git  \
-  waybar-mpris-git python3 rustup   wofi \
-  xdg-desktop-portal-hyprland-git tty-clock-git swaylockd grim slurp \
-  pokemon-colorscripts-git starship jq dunst wl-clipboard swaylock-effects-git \
-  swww-git  golang aur-talk-git aurpublish yup aurvote-utils \
+  lolcat ripgrep autojump hyprland waybar-hyprland-git  \
+  waybar-mpris-git wofi xdg-desktop-portal-hyprland-git tty-clock-git swaylockd\
+  grim slurp pokemon-colorscripts-git starship jq dunst wl-clipboard \
+  swaylock-effects-git swww-git  golang aur-talk-git aurpublish yup aurvote-utils \
   package-query util-say-git  wthrr wlogout pipewire bluez \
-  wireguard-tools wifi4wofi
+  openvpn
+
+echo "Installing term tools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+yay -S --needed --noconfirm zsh kitty neovim neofetch ranger ripgrep fzf tmux wthrr
 
 echo "Installing languages and devtools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia
