@@ -1,5 +1,8 @@
 #!/bin/bash
 #
+echo "installing gaming and media packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+yay -S --needed --noconfirm steam cava musickube
+
 echo "updating with pacman..."
 sudo pacman -Syyu --noconfirm
 
@@ -12,49 +15,52 @@ sudo pacman -Syyu --noconfirm
 echo "updating with yay..."
 yay -Syyu --noconfirm
 
-rm -rf ~/installs
-rm -r ~/.zsh_plugins
-rm -r ~/projects
-
-mkdir ~/installs
-mkdir ~/.zsh_plugins
-mkdir -p ~/projects/{api,config,libs,ui}
-
-# Mounts
-# read -p "Do you want to create mount points and update fstab? (yes/no) " yn
-#
-# case $yn in 
-# 	yes ) 
-# 	  echo "Creating /mnt directories";
-# 	      mkdir -p /mnt/{media,backup};
-# 	  echo "Updating fstab";
-# 	    sudo echo "10.7.5.60:/mnt/general/personal/media     /mnt/media     nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
-#       sudo echo "10.7.5.60:/mnt/general/backup /mnt/backup        nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
-#        break;;
-# 	no ) echo exiting...;
-# 		break;;
-# 	* ) echo invalid response;;
-# esac
-# done
 
 
-echo "installing fonts and fun stuff"
-yay -S nerd-fonts-jetbrains-mono-160 ponysay cowsay cowthink
+Mounts
+read -p "Do you want to create mount points and update fstab? (yes/no) " yn
 
-echo "installing base packages..."
-yay -S --needed --noconfirm cava autotiling lazygit insomia ttf-jetbrains-mono-nerd toilet \
-  lolcat zsh kitty neovim neofetch ranger rofi wofi fortune-mod \
+select yn in "Yes" "No"; do
+case $yn in 
+	yes ) 
+	  echo "Creating /mnt directories";
+	      sudo mkdir -p /mnt/{media,backup};
+	  echo "Updating fstab";
+	    sudo echo "10.7.5.60:/mnt/general/personal/media     /mnt/media     nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
+      sudo echo "10.7.5.60:/mnt/general/backup /mnt/backup        nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
+       break;;
+	no ) echo exiting...;
+		break;;
+	* ) echo invalid response;;
+esac
+done
+
+
+
+
+echo "installing base packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+yay -S --needed --noconfirm  autotiling toilet \
+  lolcat zsh kitty neovim neofetch ranger \
   ripgrep autojump hyprland waybar-hyprland-git  \
-  waybar-mpris-git python3 rustup kitty  wofi \
+  waybar-mpris-git python3 rustup   wofi \
   xdg-desktop-portal-hyprland-git tty-clock-git swaylockd grim slurp \
   pokemon-colorscripts-git starship jq dunst wl-clipboard swaylock-effects-git \
   swww-git  golang aur-talk-git aurpublish yup aurvote-utils \
   package-query util-say-git  wthrr wlogout pipewire bluez \
-  wireguard-tools wifi4wofi gdm
+  wireguard-tools wifi4wofi
+
+echo "installing languages and devtools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia
+
+echo "installing internet and messaging packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+yay -S --needed --noconfirm firefox-developer-edition bitwarden discord signal-desktop
+
+echo "installing gaming and media packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+yay -S --needed --noconfirm steam cava musickube
 
 
-echo "Enabling LightDM as Login Manager..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-sudo systemctl enable gdm
+# echo "Enabling LightDM as Login Manager..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+# sudo systemctl enable gdm
 
 echo "Installing nvm..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
