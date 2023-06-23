@@ -15,7 +15,7 @@ echo "updating with yay..."
 yay -Syyu --noconfirm
 
 
-yay -S --needed --noconfirm cowsay cowthink ponysay toilet lolcat nerd-fonts-jetbrains-mono-160
+yay -S --needed --noconfirm cowsay cowthink ponysay toilet lolcat nerd-fonts-meta
 
 #Mounts
 echo "Would you like to mount nfs shares?" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
@@ -42,22 +42,22 @@ git config --global credential.helper cache
 echo "Starting SIO Arch Initialization!\rPlease wait a few moments and stay near by \rin case any prompts appear." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 
 echo "Installing base packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-yay -S --needed --noconfirm  autotiling toilet \
-  lolcat ripgrep autojump hyprland waybar-hyprland-git  \
+yay -S --needed --noconfirm \
+  ripgrep autojump hyprland waybar-hyprland-git  \
   waybar-mpris-git wofi xdg-desktop-portal-hyprland-git tty-clock-git swaylockd\
   grim slurp pokemon-colorscripts-git starship jq dunst wl-clipboard \
-  swaylock-effects-git swww-git  golang aur-talk-git aurpublish yup aurvote-utils \
+  swaylock-effects-git  aur-talk-git aurpublish yup aurvote-utils \
   package-query util-say-git  wthrr wlogout pipewire bluez \
-  openvpn
+  openvpn rofi swayidle
 
 echo "Installing term tools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm zsh kitty neovim neofetch ranger ripgrep fzf tmux wthrr
 
 echo "Installing languages and devtools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia
+yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk
 
 echo "Installing internet and messaging packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-yay -S --needed --noconfirm firefox-developer-edition bitwarden discord signal-desktop
+yay -S --needed --noconfirm firefox-developer-edition bitwarden bitwarden-cli discord signal-desktop
 
 echo "Installing gaming and media packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm steam cava musickube
@@ -144,5 +144,5 @@ echo "
             ╚═╝     ╚═╝╚══════╝              ╚══════╝╚═╝ ╚═════╝                             
                                                                                  
 
-"
+" | lolcat
 exit 0;
