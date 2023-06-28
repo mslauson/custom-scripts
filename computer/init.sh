@@ -43,21 +43,29 @@ echo "Starting SIO Arch Initialization!\rPlease wait a few moments and stay near
 
 echo "Installing base packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm \
-  ripgrep autojump hyprland waybar-hyprland-git  \
-  waybar-mpris-git wofi xdg-desktop-portal-hyprland-git tty-clock-git swaylockd\
-  grim slurp pokemon-colorscripts-git starship jq dunst wl-clipboard \
-  swaylock-effects-git  aur-talk-git aurpublish yup aurvote-utils \
-  package-query util-say-git  wthrr wlogout pipewire bluez \
-  openvpn rofi swayidle
+  grim slurp aur-talk-git aurpublish yup aurvote-utils \
+  package-query util-say-git pipewire bluez 
+    
+
+echo "Installing Hyperland and Wayland pkgs" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+yay -S --needed --noconfirm \
+  hyprland waybar-hyprland-git xd-desktop-portal-hyprland-git \
+  dunst rofi swayidle wl-clipboard wlogout \
+  wofi swaylock-effects-git waybar-mpris-git tty-clock-git swaylockd \
+  swaybg
+  
 
 echo "Installing term tools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-yay -S --needed --noconfirm zsh kitty neovim neofetch ranger ripgrep fzf tmux wthrr
+yay -S --needed --noconfirm zsh kitty neovim neofetch ranger ripgrep fzf tmux wthrr starship jq autojump
 
 echo "Installing languages and devtools..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk
 
 echo "Installing internet and messaging packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-yay -S --needed --noconfirm firefox-developer-edition bitwarden bitwarden-cli discord signal-desktop
+yay -S --needed --noconfirm firefox-developer-edition bitwarden bitwarden-cli discord signal-desktop openvpn
+
+echo "Installing security tools" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yubikey-manager yubico-pam
 
 echo "Installing gaming and media packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm steam cava musickube
@@ -81,13 +89,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh_plugins/zsh-au
 
 echo "Ininitalizing configs..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-config
-~/projects/config/wm-config/init.sh
 
 git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
-~/projects/config/term-config/init.sh
 
 git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
-~/projects/config/astro-config/init.sh
 
 echo "Initializing notes..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/notes.git ~/notes
