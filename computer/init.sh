@@ -15,7 +15,7 @@ echo "updating with yay..."
 yay -Syyu --noconfirm
 
 
-yay -S --needed --noconfirm cowsay cowthink ponysay toilet lolcat nerd-fonts-meta
+yay -S --needed --noconfirm cowsay cowthink ponysay toilet lolcat nerd-fonts-meta gum
 
 #Mounts
 # echo "Would you like to mount nfs shares?" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
@@ -44,7 +44,7 @@ echo "Starting SIO Arch Initialization!\rPlease wait a few moments and stay near
 echo "Installing base packages..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 yay -S --needed --noconfirm \
   grim slurp aur-talk-git aurpublish yup aurvote-utils \
-  package-query util-say-git pipewire bluez 
+  package-query util-say-git pipewire bluez brightnessctl \
     
 
 echo "Installing Hyperland and Wayland pkgs" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
