@@ -18,21 +18,21 @@ yay -Syyu --noconfirm
 yay -S --needed --noconfirm cowsay cowthink ponysay toilet lolcat nerd-fonts-meta
 
 #Mounts
-echo "Would you like to mount nfs shares?" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-select yn in "Yes" "No"; do
-case $yn in 
-	yes ) 
-	  echo "Creating /mnt directories";
-	      sudo mkdir -p /mnt/{media,backup};
-	  echo "Updating fstab";
-	    sudo echo "10.7.5.60:/mnt/general/personal/media     /mnt/media     nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
-      sudo echo "10.7.5.60:/mnt/general/backup /mnt/backup        nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
-       break;;
-	no ) echo exiting...;
-		break;;
-	* ) echo invalid response;;
-esac
-done
+# echo "Would you like to mount nfs shares?" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
+# select yn in "Yes" "No"; do
+# case $yn in 
+# 	yes ) 
+# 	  echo "Creating /mnt directories";
+# 	      sudo mkdir -p /mnt/{media,backup};
+# 	  echo "Updating fstab";
+# 	    sudo echo "10.7.5.60:/mnt/general/personal/media     /mnt/media     nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
+#       sudo echo "10.7.5.60:/mnt/general/backup /mnt/backup        nfs     _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0" >> /etc/fstab
+#        break;;
+# 	no ) echo exiting...;
+# 		break;;
+# 	* ) echo invalid response;;
+# esac
+# done
 
 # read -p "Please enter git username: " GIT_USER
 # read -p "Please enter git password: " GIT_PASS
