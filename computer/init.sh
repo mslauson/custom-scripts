@@ -34,8 +34,8 @@ case $yn in
 esac
 done
 
-read -p "Please enter git username: " GIT_USER
-read -p "Please enter git password: " GIT_PASS
+# read -p "Please enter git username: " GIT_USER
+# read -p "Please enter git password: " GIT_PASS
 
 git config --global credential.helper cache
 
@@ -88,14 +88,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh_plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh_plugins/zsh-autosuggestions
 
 echo "Ininitalizing configs..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-config
+# git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-config
+# git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
+# git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
 
-git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
-
-git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
+git clone https://gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-config
+git clone https://gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
+git clone https://gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
 
 echo "Initializing notes..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
-git clone https://$GIT_USER:$GIT_PASS@gitea.slauson.io/mslauson/notes.git ~/notes
+git clone https://gitea.slauson.io/mslauson/notes.git ~/notes
 
 echo "  
 
