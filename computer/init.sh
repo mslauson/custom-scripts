@@ -47,7 +47,8 @@ mkdir -p ~/projects/api/{budget,ndt,blog}
 echo "Installing base packages..." | lolcat
 yay -S --needed --noconfirm \
 	grim slurp aur-talk-git aurpublish yup aurvote-utils \
-	package-query util-say-git pipewire bluez brightnessctl
+	package-query util-say-git pipewire bluez brightnessctl \
+	chsh zsh
 
 echo "Installing Hyperland and Wayland pkgs" | lolcat
 yay -S --needed --noconfirm \
@@ -57,7 +58,7 @@ yay -S --needed --noconfirm \
 	swaybg
 
 echo "Installing term tools..." | lolcat
-yay -S --needed --noconfirm zsh kitty neovim neofetch ranger ripgrep fzf tmux wthrr starship jq autojump
+yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep fzf tmux wthrr starship jq autojump
 
 echo "Installing languages and devtools..." | lolcat
 yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk code-minimap
@@ -98,6 +99,9 @@ echo "Ininitalizing configs..." | lolcat
 git clone https://gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-config
 git clone https://gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
 git clone https://gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
+
+echo "Changing shell to zsh..." | lolcat
+chsh -s $(which zsh)
 
 echo "Initializing notes..." | lolcat
 git clone https://gitea.slauson.io/mslauson/notes.git ~/notes
