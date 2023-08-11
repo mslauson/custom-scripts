@@ -58,7 +58,7 @@ yay -S --needed --noconfirm \
 	swaybg
 
 echo "Installing term tools..." | lolcat
-yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep fzf tmux wthrr starship jq autojump
+yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep fzf tmux wthrr starship jq autojump fzf fzf-tab fzf-kill kube-fzf zsh-fzf-plugin npm-fzf
 
 echo "Installing languages and devtools..." | lolcat
 yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk code-minimap
