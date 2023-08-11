@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo "Installing base packages..." | lolcat
+yay -S --needed --noconfirm \
+	grim slurp aur-talk-git aurpublish yup aurvote-utils \
+	package-query util-say-git pipewire bluez brightnessctl \
+	chsh zsh
+
+echo "Installing Hyperland and Wayland pkgs" | lolcat
+yay -S --needed --noconfirm \
+	hyprland waybar-hyprland-git xdg-desktop-portal-hyprland-git \
+	dunst rofi swayidle wl-clipboard wlogout \
+	wofi swaylock-effects-git waybar-mpris-git tty-clock-git swaylockd \
+	swaybg
+
+echo "Installing term tools..." | lolcat
+yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep tmux wthrr \
+	starship jq autojump fzf fzf-tab fzf-kill kube-fzf zsh-fzf-plugin npm-fzf \
+	zsh-fast-syntax-highlighting zsh-sudo zsh-autocomplete find-the-command \
+	zsh-history-search-multi-word-git zsh-background-notify-git zsh-you-should-use
+
+echo "Installing languages and devtools..." | lolcat
+yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk code-minimap
+
+echo "Installing internet and messaging packages..." | lolcat
+yay -S --needed --noconfirm firefox-developer-edition bitwarden bitwarden-cli discord signal-desktop openvpn
+
+echo "Installing security tools" | lolcat
+yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yubikey-manager yubico-pam
+
+echo "Installing gaming and media packages..." | lolcat
+yay -S --needed --noconfirm steam lutris cava musickube youtube-dl-git ytfzf
+

@@ -44,33 +44,7 @@ echo "Initializing project directories" | lolcat
 mkdir -p ~/projects/{config,api,libs,ui}
 mkdir -p ~/projects/api/{budget,ndt,blog}
 
-echo "Installing base packages..." | lolcat
-yay -S --needed --noconfirm \
-	grim slurp aur-talk-git aurpublish yup aurvote-utils \
-	package-query util-say-git pipewire bluez brightnessctl \
-	chsh zsh
-
-echo "Installing Hyperland and Wayland pkgs" | lolcat
-yay -S --needed --noconfirm \
-	hyprland waybar-hyprland-git xdg-desktop-portal-hyprland-git \
-	dunst rofi swayidle wl-clipboard wlogout \
-	wofi swaylock-effects-git waybar-mpris-git tty-clock-git swaylockd \
-	swaybg
-
-echo "Installing term tools..." | lolcat
-yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep fzf tmux wthrr starship jq autojump fzf fzf-tab fzf-kill kube-fzf zsh-fzf-plugin npm-fzf ytfzf youtube-dl-git
-
-echo "Installing languages and devtools..." | lolcat
-yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk code-minimap
-
-echo "Installing internet and messaging packages..." | lolcat
-yay -S --needed --noconfirm firefox-developer-edition bitwarden bitwarden-cli discord signal-desktop openvpn
-
-echo "Installing security tools" | lolcat
-yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yubikey-manager yubico-pam
-
-echo "Installing gaming and media packages..." | lolcat
-yay -S --needed --noconfirm steam lutris cava musickube
+yay-installs
 
 # echo "Enabling LightDM as Login Manager..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 # sudo systemctl enable gdm
