@@ -15,11 +15,10 @@ yay -S --needed --noconfirm \
 
 echo "Installing term tools..." | lolcat
 yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep tmux wthrr \
-	starship jq autojump fzf fzf-tab fzf-kill kube-fzf zsh-fzf-plugin npm-fzf \
-	zsh-fast-syntax-highlighting zsh-sudo zsh-autocomplete find-the-command \
-	zsh-history-search-multi-word-git zsh-background-notify-git zsh-you-should-use
+	starship jq autojump fzf fzf-kill kube-fzf zsh-fzf-plugin npm-fzf \
+	zsh-fast-syntax-highlighting zsh-sudo find-the-command pop
 
-echo "Installing languages and devtools..." | lolcat
+"Installing languages and devtools..." | lolcat
 yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk code-minimap
 
 echo "Installing internet and messaging packages..." | lolcat
@@ -30,4 +29,3 @@ yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yub
 
 echo "Installing gaming and media packages..." | lolcat
 yay -S --needed --noconfirm steam lutris cava musickube youtube-dl-git ytfzf
-
