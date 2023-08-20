@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CURRENT_PATH="$(pwd)"
+NVIM_DIR="$(gum choose astro-nvim lazy-nvim)"
+echo "Using $NVIM_DIR as nvim config" | lolcat
+
+rm -rf ~/.config/nvim
+ln -s ~/.config/"$NVIM_DIR" ~/.config/nvim
