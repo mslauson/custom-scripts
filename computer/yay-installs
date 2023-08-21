@@ -16,7 +16,7 @@ yay -S --needed --noconfirm \
 echo "Installing term tools..." | lolcat
 yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep tmux wthrr \
 	starship jq autojump fzf fzf-kill kube-fzf zsh-fzf-plugin npm-fzf \
-	zsh-fast-syntax-highlighting zsh-sudo find-the-command pop
+	find-the-command pop
 
 "Installing languages and devtools..." | lolcat
 yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk code-minimap
@@ -25,7 +25,7 @@ echo "Installing internet and messaging packages..." | lolcat
 yay -S --needed --noconfirm firefox-developer-edition bitwarden bitwarden-cli discord signal-desktop openvpn
 
 echo "Installing security tools" | lolcat
-yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yubikey-manager yubico-pam
-
+yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yubikey-manager yubico-pam yubico-authenticator-bin
 echo "Installing gaming and media packages..." | lolcat
-yay -S --needed --noconfirm steam lutris cava musickube youtube-dl-git ytfzf
+
+yay -S --needed --noconfirm steam steam-tui lutris cava musickube youtube-dl-git ytfzf
