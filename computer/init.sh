@@ -49,10 +49,7 @@ yay-installs
 # echo "Enabling LightDM as Login Manager..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 # sudo systemctl enable gdm
 
-echo "Installing nvm..." | lolcat
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-
-echo "Installing nvm..." | lolcat
+echo "Installing Node 20" | lolcat
 nvm install 20
 
 echo "Installing zplug..." | lolcat

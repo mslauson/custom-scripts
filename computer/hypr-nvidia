@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Installing Hyperland and Wayland pkgs" | lolcat
+yay -S --needed --noconfirm \
+	hyprland-nvidia nvidia-dkms waybar-hyprland-git xdg-desktop-portal-hyprland-git \
+	qt5-wayland qt5ct libva libva-nvidia-driver-git \
+	dunst rofi swayidle wl-clipboard wlogout \
+	wofi swaylock-effects-git waybar-mpris-git tty-clock-git swaylockd \
+	swaybg
