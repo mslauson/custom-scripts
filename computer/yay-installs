@@ -18,7 +18,7 @@ echo "Installing internet and messaging packages..." | lolcat
 yay -S --needed --noconfirm firefox-developer-edition bitwarden bitwarden-cli discord signal-desktop openvpn
 
 echo "Installing security tools" | lolcat
-yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yubikey-manager yubico-pam yubico-authenticator-bin
+yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yubikey-manager yubico-pam yubico-authenticator-bin pam-u2f
 echo "Installing gaming and media packages..." | lolcat
 
 yay -S --needed --noconfirm steam steam-tui lutris cava musickube youtube-dl-git ytfzf
