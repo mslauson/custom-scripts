@@ -44,7 +44,7 @@ echo "Initializing project directories" | lolcat
 mkdir -p ~/projects/{config,api,libs,ui}
 mkdir -p ~/projects/api/{budget,ndt,blog}
 
-yay-installs
+./yay-installs
 
 # echo "Enabling LightDM as Login Manager..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
 # sudo systemctl enable gdm
