@@ -9,7 +9,7 @@ yay -S --needed --noconfirm \
 echo "Installing term tools..." | lolcat
 yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep tmux wthrr \
 	starship jq autojump fzf fzf-kill kube-fzf zsh-fzf-plugin npm-fzf \
-	find-the-command pop
+	find-the-command pop noto-fonts-emoji
 
 "Installing languages and devtools..." | lolcat
 yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk code-minimap nvm
