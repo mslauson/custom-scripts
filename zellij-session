@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+SESSION_NAME=$(gum input --prompt "Session name:" --placeholder "work")
+
+# Check if the session exists
+if zellij list-sessions | grep -q "$SESSION_NAME"; then
+	# Attach to the existing session
+	zellij a -c "$SESSION_NAME"
+else
+	# Start a new session with the given name
+	zellij --session "$SESSION_NAME"
+fi
