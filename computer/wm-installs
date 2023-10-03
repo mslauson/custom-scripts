@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Installing login Hyperland and other DE dependencies " | lolcat
+yay -S hyprland waybar-hyprland-git xdg-desktop-portal-hyprland-git \
+	qt5-wayland qt5ct libva libva-nvidia-driver-git \
+	dunst rofi swayidle wl-clipboard wlogout \
+	wofi swaylock-effects-git waybar-mpris-git tty-clock-git swaylockd \
+	swaybg
+
+echo "Installing login manager pkgs" | lolcat
+pacman -Syu sddm qt5-graphicaleffects qt5-svg qt5-quickcontrols2
+
+echo "Enabling SDDM as login manager" | lolcat
+sudo systemctl enable --now sddm.service
+
+echo "Installing themes"
+sudo yay -S sddm-theme-catppuccin-git rose-pine-gtk-theme

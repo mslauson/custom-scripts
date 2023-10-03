@@ -44,6 +44,7 @@ echo "Initializing project directories" | lolcat
 mkdir -p ~/projects/{config,api,libs,ui}
 mkdir -p ~/projects/api/{budget,ndt,blog}
 
+./wm-installs
 ./yay-installs
 
 # echo "Enabling LightDM as Login Manager..." | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
@@ -71,8 +72,8 @@ git clone https://gitea.slauson.io/mslauson/wm-config.git ~/projects/config/wm-c
 git clone https://gitea.slauson.io/mslauson/term-config.git ~/projects/config/term-config
 git clone https://gitea.slauson.io/mslauson/astro-config.git ~/projects/config/astro-config
 
-echo "Changing shell to zsh..." | lolcat
-chsh -s $(which zsh)
+echo "Changing shell to fish..." | lolcat
+chsh -s $(which fish)
 
 echo "Initializing notes..." | lolcat
 git clone https://gitea.slauson.io/mslauson/notes.git ~/notes
