@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Source the .profile
+source /home/mslauson/.profile
+
+printenv
+# Check if an IDE name was passed in
+if [ -z "$1" ]; then
+	echo "Please provide the name of a JetBrains IDE to launch (e.g., goland, idea, webstorm, etc.)."
+	exit 1
+fi
+
+# Launch the specified JetBrains IDE
+"/home/mslauson/.local/share/JetBrains/Toolbox/scripts/$1"
