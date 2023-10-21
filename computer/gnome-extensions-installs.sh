@@ -7,4 +7,5 @@ yay -S --needed --noconfirm \
 
 echo "Installing GTK Themes" | lolcat
 
-yay -S catppuccin-gtk-theme-mocha
+yay -S --needed --noconfirm \
+	catppuccin-gtk-theme-mocha
