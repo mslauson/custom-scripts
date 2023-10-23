@@ -14,7 +14,7 @@ sudo pacman -Syyu --noconfirm
 echo "updating with yay..."
 yay -Syyu --noconfirm
 
-yay -S --needed --noconfirm cowsay cowthink ponysay toilet lolcat nerd-fonts-meta gum
+yay -S --needed --noconfirm cowsay cowthink ponysay toilet lolcat gum
 
 #Mounts
 # echo "Would you like to mount nfs shares?" | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n | lolcat
