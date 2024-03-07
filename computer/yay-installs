@@ -12,13 +12,13 @@ yay -S --needed --noconfirm kitty neovim neofetch ranger ripgrep tmux wthrr \
 	find-the-command pop noto-fonts-emoji fish
 
 "Installing languages and devtools..." | lolcat
-yay -S --needed --noconfirm pythin3 rustup golang lazygit insomnia jdk-openjdk code-minimap nvm
+yay -S --needed --noconfirm python3 rustup golang lazygit insomnia jdk-openjdk code-minimap nvm
 
 echo "Installing internet and messaging packages..." | lolcat
-yay -S --needed --noconfirm firefox-developer-edition bitwarden bitwarden-cli discord signal-desktop openvpn
+yay -S --needed --noconfirm firefox bitwarden bitwarden-cli discord openvpn
 
 echo "Installing security tools" | lolcat
 yay -S --needed --noconfirm yubikey-personalization yubico-authenticator-bin yubikey-manager yubico-pam yubico-authenticator-bin pam-u2f
 echo "Installing gaming and media packages..." | lolcat
 
-yay -S --needed --noconfirm steam steam-tui lutris cava musickube youtube-dl-git ytfzf
+yay -S --needed --noconfirm steam steam-tui lutris cava musickube ytfzf
