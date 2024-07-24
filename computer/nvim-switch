@@ -3,8 +3,10 @@
 CURRENT_PATH="$(pwd)"
 NVIM_CONFIG_PATH="$HOME/projects/config/neovim-config/versions"
 NVIM_VERSIONS="$(ls "$NVIM_CONFIG_PATH")"
+echo "Available nvim versions: $NVIM_VERSIONS" | lolcat
+# NVIM_VERSIONS="old-nvim new-nvim"
 
-NEW_NVIM="$(gum choose "$NVIM_VERSIONS")"
+NEW_NVIM="$(gum choose $NVIM_VERSIONS)"
 echo "Using $NEW_NVIM as nvim config" | lolcat
 
 rm -rf ~/.config/nvim
