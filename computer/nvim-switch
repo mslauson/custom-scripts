@@ -1,8 +1,11 @@
 #!/bin/bash
 
 CURRENT_PATH="$(pwd)"
-NVIM_DIR="$(gum choose astro-nvim lazy-nvim)"
-echo "Using $NVIM_DIR as nvim config" | lolcat
+NVIM_CONFIG_PATH="$HOME/projects/config/neovim-config/versions"
+NVIM_VERSIONS="$(ls "$NVIM_CONFIG_PATH")"
+
+NEW_NVIM="$(gum choose "$NVIM_VERSIONS")"
+echo "Using $NEW_NVIM as nvim config" | lolcat
 
 rm -rf ~/.config/nvim
-ln -s ~/.config/"$NVIM_DIR" ~/.config/nvim
+ln -s "$NVIM_CONFIG_PATH/$NEW_NVIM" ~/.config/nvim
