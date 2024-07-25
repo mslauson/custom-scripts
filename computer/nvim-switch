@@ -9,5 +9,8 @@ echo "Available nvim versions: $NVIM_VERSIONS" | lolcat
 NEW_NVIM="$(gum choose $NVIM_VERSIONS)"
 echo "Using $NEW_NVIM as nvim config" | lolcat
 
+LN_PATH="$NVIM_CONFIG_PATH/$NEW_NVIM"
+echo $LN_PATH
+
 rm -rf ~/.config/nvim
-ln -s "$NVIM_CONFIG_PATH/$NEW_NVIM" ~/.config/nvim
+ln -s $LN_PATH ~/.config/nvim
