@@ -1,8 +1,13 @@
 #!/bin/bash
 
-echo "Installing Hyperland and Wayland pkgs" | lolcat
+echo "Installing Hyperland and core utilities.. " | lolcat
 yay -S --needed --noconfirm \
-	hyprland waybar-hyprland-git xdg-desktop-portal-hyprland-git \
-	dunst rofi swayidle wl-clipboard wlogout \
-	wofi swaylock-effects-git waybar-mpris-git tty-clock-git swaylockd \
-	swaybg
+  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+echo "Installing Hyperland and core utilities.. " | lolcat
+yay -S --needed --noconfirm \
+  hyprland \
+  hyprpaper hyprpicker hyprlock
+# waybar-mpris-git tty-clock-git
+
+yay -S --needed --noconfirm \
+  dunst rofi wl-clipboard wlogout tty-clock-git
