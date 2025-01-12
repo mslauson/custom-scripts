@@ -1,15 +1,16 @@
 #!/bin/bash
 
-echo "Installing Hyperland and core utilities.. " | lolcat
+echo "Installing Desktop Portals" | lolcat
 yay -S --needed --noconfirm \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
-echo "Installing Hyperland and core utilities.. " | lolcat
+echo "Installing Hyprland and Core Utilities.. " | lolcat
 yay -S --needed --noconfirm \
   hyprland \
   hyprpaper hyprpicker hyprlock hypridle \
   hyprsunset hyprsysteminfo hyprcursor
 # waybar-mpris-git tty-clock-git
 
+echo "Installing Wayland Utilities and Extras.. " | lolcat
 yay -S --needed --noconfirm \
   dunst rofi wl-clipboard wlogout tty-clock-git
