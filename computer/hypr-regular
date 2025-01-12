@@ -3,10 +3,12 @@
 echo "Installing Hyperland and core utilities.. " | lolcat
 yay -S --needed --noconfirm \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+
 echo "Installing Hyperland and core utilities.. " | lolcat
 yay -S --needed --noconfirm \
   hyprland \
-  hyprpaper hyprpicker hyprlock
+  hyprpaper hyprpicker hyprlock hypridle \
+  hyprsunset hyprsysteminfo hyprcursor
 # waybar-mpris-git tty-clock-git
 
 yay -S --needed --noconfirm \
